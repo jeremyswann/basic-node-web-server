@@ -8,7 +8,8 @@
     "hbs": "^4.0.1"
   },
   "scripts": {
-    "serve": "nodemon server -e js,hbs"
+    "serve": "nodemon server -e js,hbs",
+    "start": "node server.js"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
