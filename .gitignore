@@ -1,6 +1,4 @@
 package-lock.json
-notes-data.json
+server.log
 yarn.lock
 node_modules
-playground
-.env

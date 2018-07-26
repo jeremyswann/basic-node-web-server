@@ -1,5 +1,5 @@
 # Web Server ෴
-A **very** basic command line weather app
+A **very** basic web server
 **Created with :heart: in ⬢[Node.js][] with ෴[HandleBars][] by [Jeremy Swanborough][]**
 
 ## Requirements:
@@ -19,14 +19,11 @@ A **very** basic command line weather app
 ```
 
 ## How to use:
-Run `--help` to get a list of possible commands
+Run `yarn serve` to start the web server
 
 ```console
-λ node app --help
-Options:
-  --address, -a  Address to fetch weather for
-  --help, -h     Show help
-  --version, -v  Show version number
+λ yarn serve
+Server is up on port: 3000.
 ```
 
 Have fun! :tada:
