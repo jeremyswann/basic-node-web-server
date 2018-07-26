@@ -1,20 +1,38 @@
 const express = require('express')
+const hbs = require('hbs')
 
 const app = express()
 
+hbs.registerPartials(__dirname + '/views/partials')
+app.set('view engine', 'hbs')
 app.use(express.static(__dirname + '/public'))
 
+app.use((req, res, next) => {
+
+})
+
+hbs.registerHelper('getCurrentYear', () => {
+	return new Date().getFullYear()
+})
+
+hbs.registerHelper('screamIt', text => {
+	return text.toUpperCase()
+})
+
 app.get('/', (req, res) => {
-	res.send({
-		name: 'Jeremy',
-		age: '29',
-		likes: ['Drawing', 'Guitar'],
-		pages: ['/about'],
+	res.render('home.hbs', {
+		pageTitle: 'Home Page',
+		pageSubtitle: 'The home page for Jeremy Swann',
+		welcomeMessage: 'Welcome to my website!',
 	})
 })
 
 app.get('/about', (req, res) => {
-	res.send('<h1>About Page</h1>')
+	res.render('about.hbs', {
+		pageTitle: 'About Page',
+		pageSubtitle:
+			'About page, filled with usefull information about the server.',
+	})
 })
 
 app.get('/bad', (req, res) => {
