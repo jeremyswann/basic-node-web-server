@@ -2,7 +2,7 @@ const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
 
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 
 const app = express()
 
@@ -52,6 +52,13 @@ app.get('/about', (req, res) => {
 		pageTitle: 'About Page',
 		pageSubtitle:
 			'About page, filled with usefull information about the server.',
+	})
+})
+
+app.get('/projects', (req, res) => {
+	res.render('projects.hbs', {
+		pageTitle: 'Projects Page',
+		pageSubtitle: 'Projects page, list of impressive projects',
 	})
 })
 
